@@ -3,7 +3,7 @@ let browserSync =   require('browser-sync').create();
 let sass        =   require('gulp-sass');
 let uglifycss   =   require('gulp-uglifycss');
 
-// Compile sass into CSS & auto-inject into browsers
+// Compile sass into CSS
 gulp.task('sass', function() {
     return gulp.src('./scss/*.scss')
     .pipe(sass({errLogToConsole: true}))
@@ -21,7 +21,7 @@ gulp.task('css', function() {
       .pipe(gulp.dest('./dist/css/'));
 });
 
-// Move the javascript files into our /js folder
+// Move the javascript files into js folder
 gulp.task('js', function() {
     return gulp.src('node_modules/jquery/dist/jquery.min.js')
     .pipe(gulp.dest("./dist/js/"))
