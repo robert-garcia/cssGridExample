@@ -8,7 +8,7 @@ gulp.task('sass', function() {
     return gulp.src('./scss/*.scss')
     .pipe(sass({errLogToConsole: true}))
     .on('error', console.error.bind(console))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream());
 
 });
