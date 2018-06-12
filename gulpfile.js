@@ -43,12 +43,12 @@ gulp.task('run', ['css','js','scripts']);
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        server: "./"
+        server: "./dist/"
     });
 
     gulp.watch(['./scss/*.scss'], ['sass']);
     gulp.watch(['./src/js/*.js'], ['scripts']);
-    gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./dist/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['run','serve']);
